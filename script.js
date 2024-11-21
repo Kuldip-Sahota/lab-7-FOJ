@@ -23,3 +23,23 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     formMessage.textContent = "Form submitted successfully!";
 });
+
+const focusInput = document.getElementById('focus-input');
+const focusMessage = document.getElementById('focus-message');
+
+focusInput.addEventListener('focus', () => {
+    focusMessage.textContent = "Input is focused!";
+});
+
+focusInput.addEventListener('blur', () => {
+    focusMessage.textContent = "Input lost focus.";
+});
+
+const buttonContainer = document.getElementById('button-container');
+const delegationMessage = document.getElementById('delegation-message');
+
+buttonContainer.addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        delegationMessage.textContent = `You clicked: ${event.target.textContent}`;
+    }
+});
